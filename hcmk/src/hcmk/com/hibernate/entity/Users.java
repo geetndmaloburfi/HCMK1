@@ -7,13 +7,20 @@ import javax.persistence.Table;
 
 
 
-@Entity
+@Entity(name="users")
 @Table(name="users")
 public class Users {
 
 		@Id
 		@Column(name="userName")
 	    String userName;
+		@Override
+		public String toString() {
+			return "Users [userName=" + userName + ", firstName=" + firstName + ", lastName=" + lastName
+					+ ", dateOfBirth=" + dateOfBirth + ", contactDetail=" + contactDetail + ", gender=" + gender
+					+ ", emailAddress=" + emailAddress + ", password=" + password + "]";
+		}
+
 		@Column(name="firstName")
 	    String firstName;
 		@Column(name="lastName")
@@ -24,14 +31,6 @@ public class Users {
 	    String contactDetail;
 		@Column(name="gender")
 		String gender;
-		public String getGender() {
-			return gender;
-		}
-
-		public void setGender(String gender) {
-			this.gender = gender;
-		}
-
 		@Column(name="emailAddress")
 	    String emailAddress;
 		@Column(name="password")
@@ -124,5 +123,11 @@ public class Users {
 		this.password = password;
 	}
 	
+	public String getGender() {
+		return gender;
+	}
 
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 }

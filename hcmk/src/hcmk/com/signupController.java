@@ -50,8 +50,7 @@ public class signupController extends HttpServlet {
 		user.setEmailAddress(request.getParameter("emailAddress"));
 		user.setContactDetail(request.getParameter("contactDetail"));
 		user.setPassword(request.getParameter("password"));
-		UsersDAO dao=new UsersDAO();
-		dao.addUsersDetails(user);
+		UsersDAO.addUsersDetails(user);
 		
 		getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
 		}

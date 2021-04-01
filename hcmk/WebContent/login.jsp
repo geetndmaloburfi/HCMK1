@@ -5,14 +5,13 @@
       <section>
        <div class="main">
 	    <p class="sign" align="center">Sign in</p>
-	    <form class="form1" action="post" >
+	    <form class="form1" action="<%=request.getContextPath()%>/Validatelogin" method="post" >
 	    <p class="ungiven">Username </p>
-	    <input class="un " type="text"  >
+	    <input class="un " type="text" name="userName" required />
       
-	     <p class="passgiven">Password </p>
-	     <input class="pass" type="password"  >
+	     <p class="ungiven">password</p><input class="un username" name="password" type="password"  required/><br>
 	      
-      	 <a class="submit" href="#" >Sign in</a><br><br>
+      	 <input type="submit" value="Sing in" class="submit">
       
          <p class="signuplogin" >New User <a class="forgot" href="<%=request.getContextPath()%>/SignUp" >Create New Account</a><p>
          

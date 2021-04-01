@@ -888,11 +888,16 @@ a {
 	list-style:none;
 	margin:0;
 }
-.navbar-nav >ul>li{
+.navbar-nav .left >ul>li{
 	float:left;
 	position:relative;
 	
 }
+ .hidden{
+	display :none;
+}
+
+
 .navbar-nav ul li a {
     text-decoration: none;
     color: #807c7c;

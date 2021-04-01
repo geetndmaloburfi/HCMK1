@@ -3,7 +3,7 @@
 <%@page import="java.util.List"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<jsp:include page="/include/header.jsp" />
+<jsp:include page="/include/userheader.jsp" />
 
 <div id="demo" class="carousel slide" data-ride="carousel">
 

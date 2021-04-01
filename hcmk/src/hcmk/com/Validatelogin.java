@@ -14,7 +14,7 @@ import org.hibernate.transform.AliasToEntityMapResultTransformer;
 import hcmk.com.hibernate.DAO.UsersDAO;
 import hcmk.com.hibernate.entity.Users;
 
-@WebServlet("/Validatelogin")
+@WebServlet("/User")
 public class Validatelogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -32,9 +32,12 @@ public class Validatelogin extends HttpServlet {
 		String password=request.getParameter("password");
 		PrintWriter out =response.getWriter();
 		Users user=UsersDAO.getUser(userName,password);
+		request.setAttribute("user", user);
 		System.out.println("in post");
 		if(user!=null)
+		{
 			getServletContext().getRequestDispatcher("/userSpecPage.jsp").forward(request, response);
+		}
 			else
 			{
 			   out.println("<script type=\"text/javascript\">");

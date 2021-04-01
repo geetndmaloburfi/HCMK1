@@ -5,7 +5,7 @@
       <section>
        <div class="main">
 	    <p class="sign" align="center">Sign in</p>
-	    <form class="form1" action="<%=request.getContextPath()%>/Validatelogin" method="post" >
+	    <form class="form1" action="<%=request.getContextPath()%>/User" method="post" >
 	    <p class="ungiven">Username </p>
 	    <input class="un " type="text" name="userName" required />
       

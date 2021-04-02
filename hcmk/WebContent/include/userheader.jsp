@@ -30,6 +30,8 @@
 <link rel="icon" href="images/favicon.ico" type="image/png" />
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- FontAwesome Icons core CSS -->
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <!-- Custom animate styles for this template -->
@@ -242,11 +244,11 @@ function magnify(imgID, zoom) {
 
 												<li class="nav-item"><a
 													class="nav-link color-grey-hover" href="#">Contact</a></li>
-												
-												<li class="nav-item"><a class="userlogo" href="#"><img
-														src="images/user.png" alt="#"
-														style="margin-left: 40px; margin-right: 40px" width="40"
-														height="40"></a>
+
+
+												<li class="nav-item"><a
+													class="nav-link color-grey-hover " href="#"><i
+														class="fa fa-fw fa-user"></i>${username}</a>
 													<ul>
 														<li class="nav-item"><a class="nav-link "
 															href="<%=request.getContextPath()%>/Orders">Orders</a></li>
@@ -255,10 +257,12 @@ function magnify(imgID, zoom) {
 														<li class="nav-item"><a class="nav-link "
 															href="<%=request.getContextPath()%>/Cart">Cart</a></li>
 														<li class="nav-item"><a class="nav-link "
-															href="<%=request.getContextPath()%>">LogOut</a></li>
+															href="<%=request.getContextPath()%>/Logout">LogOut</a></li>
 													</ul></li>
 												<li class="nav-item"><a
-													class="nav-link color-grey-hover" href="#">${user.firstName}</a></li>
+													class="nav-link color-grey-hover"
+													href="<%=request.getContextPath()%>/Cart"><i
+														class="fas fa-shopping-cart"></i></a></li>
 											</ul>
 										</div>
 

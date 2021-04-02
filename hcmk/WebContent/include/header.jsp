@@ -54,23 +54,39 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-* {box-sizing: border-box;}
+* {
+	box-sizing: border-box;
+}
 
 .img-magnifier-container {
-  position:relative;
+	position: relative;
 }
 
 .img-magnifier-glass {
-  position: absolute;
-  border: 3px solid #000;
- 
-  cursor: none;
-  /*Set the size of the magnifier glass:*/
-  width: 150px;
-  height: 150px;
+	position: absolute;
+	border: 3px solid #000;
+	cursor: none;
+	/*Set the size of the magnifier glass:*/
+	width: 150px;
+	height: 150px;
+}
+
+#warning {
+	display: none;
+	color: red;
 }
 </style>
 <script>
+	
+	function mytogglepassword() {
+	  var x = document.getElementById("myInputpassword");
+	  if (x.type === "password") {
+	    x.type = "text";
+	  } else {
+	    x.type = "password";
+	  }
+	}
+	
 function magnify(imgID, zoom) {
   var img, glass, w, h, bw;
   img = document.getElementById(imgID);
@@ -241,8 +257,9 @@ function magnify(imgID, zoom) {
 
 												<li class="nav-item"><a
 													class="nav-link color-grey-hover" href="#">Contact</a></li>
-												<li class="nav-item"><a class="userlogo" href="#"><img
-														src="images/user.png" alt="#" style="margin-left: 40px; margin-right:40px" width="40" height="40"></a>
+												<li class="nav-item"><a
+													class="nav-link color-grey-hover" href="#"
+													style="margin-left: 30px;"}><i class="fa fa-fw fa-user"></i></a>
 													<ul>
 														<li class="nav-item"><a class="nav-link "
 															href="<%=request.getContextPath()%>/Login">LogIn</a></li>

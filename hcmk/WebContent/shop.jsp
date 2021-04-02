@@ -1,4 +1,19 @@
-<jsp:include page="/include/header.jsp" />
+<%
+String username=null,sessionID=null;
+if(request.getSession().getAttribute("username") ==null)
+{
+	%>
+	<jsp:include page="/include/header.jsp"/>
+	<%
+}
+else{
+	username=request.getSession().getAttribute("username").toString();
+	sessionID=request.getSession().getId();
+	%>
+	<jsp:include page="/include/userheader.jsp"/>
+	<%
+}
+%>
 <div class="one">
 <hr>
 <div class="hr1"></div>

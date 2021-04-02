@@ -4347,12 +4347,9 @@ form#commant_form div.field textarea.custom_field {
     z-index: 1;
 }
 
-*{
-    font-family:"Roboto Condensed", sans-serif;;
-}
-
-.navbar-nav  .nav-item2{
+#warning{
 	display:none;
+	color:red;
 }
 
         

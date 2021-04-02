@@ -5,9 +5,11 @@ import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.hibernate.transform.AliasToEntityMapResultTransformer;
 
@@ -28,6 +30,7 @@ public class Validatelogin extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		response.setContentType("text/html;charset=UTF-8");
 		String userName=request.getParameter("userName");
 		String password=request.getParameter("password");
 		PrintWriter out =response.getWriter();
@@ -36,17 +39,25 @@ public class Validatelogin extends HttpServlet {
 		System.out.println("in post");
 		if(user!=null)
 		{
+			request.getSession().invalidate();
+			HttpSession newSession=request.getSession(true);
+			newSession.setMaxInactiveInterval(300);
+			newSession.setAttribute("username", user.getFirstName());
+			
 			getServletContext().getRequestDispatcher("/userSpecPage.jsp").forward(request, response);
 		}
-			else
+		else
 			{
-			   out.println("<script type=\"text/javascript\">");
-			   out.println("alert('User or password incorrect please try again');");
-			   out.println("location='index.jsp';");
-			   out.println("</script>");
-			   getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
+			
+				   out.println( "<meta http-equiv='refresh' content='3;URL=/hcmk/login.jsp'>");//redirects after 3 seconds
+				   out.println("<h1 style='color:red;text-align:center;margin-top:300px;='>Username or password incorrect!</h1>");
+				
+			   //getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
 			}
 		
 	}
-
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doPost(request, response);
+	}
 }
